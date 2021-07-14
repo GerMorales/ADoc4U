@@ -1,0 +1,26 @@
+{% extends 'add_adm.html' %}
+
+{% block body %}
+<h1>Citas agendadas por pacientes</h1>
+<table border="1">
+    <tr>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Hora cita</th>
+        <th>Doctor</th>
+        <th>Especialidad</th>
+        <th>Motivo</th>
+    </tr>
+
+    {% for appointmentUser in appointmentsUsers %}
+    <tr>
+        <td>{{ appointmentUser["user_email"] }} </td>
+        <td>{{ appointmentUser["date"] }} </td>
+        <td>{{ appointmentUser["time"] }}</td>
+        <td>{{ appointmentUser["doctor"] }}</td>
+        <td>{{ appointmentUser["specialty"] }}</td>
+        <td>{{ appointmentUser["reason"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock body %}

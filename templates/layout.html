@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/logoFinal.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer> </script>
+
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+    <ul class=flashes>
+
+        {% for category,message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+
+    {% endwith %}
+
+    {% block body %}{% endblock body %}
+
+</body>
+
+</html>

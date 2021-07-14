@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dashboard</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/images/logoFinal.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111111;
+    }
+
+    .izquierda {
+      float: left;
+
+    }
+
+    .derecha {
+      float: right;
+    }
+
+    .centrar {
+      margin-top: 10%;
+      text-align: center;
+      font-style: oblique;
+      font-size: larger;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <ul>
+    <div class="izquierda"><img class="logo01" src="static/images/logoFinal.png"></div>
+    <li><a href="{{ url_for('add_client') }}">Inicio</a></li>
+    <li><a href="{{ url_for('initialForm') }}">Formulario inicial</a></li>
+    <li><a href="{{ url_for('cataloge') }}">Catálogo médico</a></li>
+    <li><a href="{{ url_for('appointment') }}">Agendar cita</a></li>
+    <li class="derecha"><a href="{{ url_for('logout') }}">Cerrar sesion</a></li>
+  </ul>
+
+  <div class="conteinerHome" align="center">
+    <img class="logo002" src="static/images/logo002.gif">
+
+    <p>Bienvenid@, {{ name }}</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category,message in messages %}
+    <p class="{{ category }}">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </div>
+
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+  <script src="{{url_for('static', filename='cataloge.js')}}"></script>
+
+  <div class="body003">
+    {% block body %}
+    <!--Slider Images-->
+    <div class="body3">
+      <div class="slider">
+        <div class="slides">
+          <!--radio buttons start-->
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+          <!--radio buttons end-->
+          <!--slide images start-->
+          <div class="slide first">
+            <img src="/static/images/Doc1.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="/static/images/Doc2.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="/static/images/Doc3.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="/static/images/Doc4.jpg" alt="">
+          </div>
+          <!--slide images end-->
+          <!--automatic navigation start-->
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+          <!--automatic navigation end-->
+        </div>
+        <!--manual navigation start-->
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!--manual navigation end-->
+      </div>
+    </div>
+
+    <!--image slider end-->
+
+    <!--image slider script -->
+
+    <script type="text/javascript">
+      var counter = 1;
+      setInterval(function () {
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if (counter > 4) {
+          counter = 1;
+        }
+      }, 5000);
+    </script>
+    <!--image slider script ends-->
+
+    <div class="Homebody01">
+      <section class="services" id="services">
+
+        <div class="title reveal">
+          <h2 class="section-title">Nuestros servicios</h2>
+          <p>Buen día {{ name }}, a continuación se te mostraran una serie de instrucciones sobre como utilizar nuestra
+            pagina web para poder mejorar tu experiencia y tu atencion medica.</p>
+        </div>
+
+
+        <div class="content01">
+          <div class="card reveal">
+            <div class="service-icon">
+              <i class="far fa-address-card"></i>
+            </div>
+            <div class="info">
+              <h3>1. Registro</h3>
+              <p>Primero, debes llenar el formulario inicial para poder agilizar tu proceso a la hora de tu consulta
+                presencial.</p>
+            </div>
+          </div>
+
+
+          <div class="card reveal">
+            <div class="service-icon">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <div class="info">
+              <h3>2. Catálogo</h3>
+              <p>Luego de haberte registrado, puede consultar nuestro catalogo de medicos y consultar nuestras
+                especialidades
+              </p>
+            </div>
+          </div>
+
+
+          <div class="card reveal">
+            <div class="service-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="info">
+              <h3>3. Agendar una cita</h3>
+              <p>Puedes agendar tu cita en el apartado "Agendar cita", en el debes colocar la fecha de tu cita, la
+                especialidad, el doctor y el motivo de tu consulta</p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="service-icon">
+              <i class="fas fa-table"></i>
+            </div>
+            <div class="info">
+              <h3>4. Consultar tus citas</h3>
+              <p>Por ultimo, para consultar tus citas, puedes dar click en el apartado de "Agendar cita" y ver tu
+                historial de citas agendadas</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    {% endblock body %}
+  </div>
+</body>
+
+</html>

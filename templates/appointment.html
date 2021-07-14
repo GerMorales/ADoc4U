@@ -1,0 +1,74 @@
+{% extends 'add_client.html' %}
+
+{% block body %}
+<h1>Hacer cita </h1>
+<br>
+
+<body>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+
+    <form action="{{ url_for('appointment') }}" method="post">
+        <label for="date1">Fecha de la cita</label>
+        <input type="date" name="date1" id="date1" placeholder="inserte una fecha....">
+        <br><br>
+
+        <label for="hour">Hora de la cita</label>
+        <input type="time" name="hour" id="hour" min="09:00" max="18:00">
+        <small>Nuestros horarios de atención son: 9:00-18:00 hrs</small>
+        <br><br>
+
+        <label for="especialidad">Especialidad:</label>
+        <select name="especialidad" id="especialidad" onchange="showDiv()">
+            <option value="General">General</option>
+            <option value="Neurología">Neurología</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Pediatría">Pediatría</option>
+            <option value="Trauma">Trauma</option>
+            <option value="Plástica">Plástica</option>
+            <option value="Ortopedia">Ortopedia</option>
+            <option value="Obstetricia">Obstetricia</option>
+        </select>
+        <br><br>
+
+        <label for="doctores">Doctores</label>
+        <div id="doctors">
+            <select name="doctores" id="doctores">
+                <option value="Dra. Meredith Grey">Dra. Meredith Grey</option>
+                <option value="Dra. Miranda Bailey">Dra. Miranda Bailey</option>
+                <option value="Dr. Richard Webber">Dr. Richard Webber</option>
+            </select>
+        </div>
+
+        <br><br>
+        <label for="reason">Motivo</label>
+        <input type="text" name="reason" id="reason" placeholder="Describa el motivo de su consulta...">
+        <br><br>
+
+        <button onclick="add()">Agendar</button>
+    </form>
+
+    <br>
+
+    <h2>Historial de citas agendadas</h2>
+    <table border="1">
+        <tr>
+            <th>Fecha</th>
+            <th>Hora cita</th>
+            <th>Doctor</th>
+            <th>Especialidad</th>
+            <th>Motivo</th>
+        </tr>
+
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment["date"] }} </td>
+            <td>{{ appointment["time"] }}</td>
+            <td>{{ appointment["doctor"] }}</td>
+            <td>{{ appointment["specialty"] }}</td>
+            <td>{{ appointment["reason"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+{% endblock body %}

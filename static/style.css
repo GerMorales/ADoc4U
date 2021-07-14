@@ -1,0 +1,694 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    /*background-image: url("/static/images/fondo.jpg"); */
+    background-color: #f1f1f1;
+    padding: 0%;
+    font-family: Arial;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  } 
+
+  .body003{
+    padding: 0%;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 0%;
+  }
+
+  .body2 {
+    background-image: url("/static/images/fondoLogin.jpg");
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  /* color btn */
+
+  #myBtnContainer {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #111111;
+  }
+
+  
+  /* style conteiner */
+  .container2  {
+    position: relative;
+    vertical-align:middle;
+    margin-bottom: 80px;
+    margin-top: 20%;
+    max-width: 380px;
+    padding: 15px 75px 45px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    border: 1px solid rgba(0,0,0,0.1); 
+    border-radius: 10px;
+    text-align: center;
+  } 
+    
+    .container-h2,
+    .checkbox {
+      margin-bottom: 30px;
+      text-align: center;
+  }
+
+  .checkbox {
+    font-weight: normal;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .btn_sign_ { 
+    background-color: #0938d3;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius:3px;
+    box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+
+  /* Style the buttons */
+  .btn {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    background-color: #111111;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 3%;
+  }
+  
+
+
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+    display: none; /* Hide columns by default */
+  }
+  
+  /* Clear floats after rows */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .cat-box {
+    float: left;
+    width: 25%;
+    display: none; /* Hide columns by default */
+  }
+  
+  /* Content */
+  .content {
+    background-color: #fff;
+    padding: 10%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background color to the active button */
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  
+
+  img {
+    height: 250px;
+  }
+
+  .containerLogo{
+    display: flex;
+    margin-left: 10%;
+    
+  }
+  
+  #logo01 {
+    position: relative;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    max-width: 280px;
+    padding: 0px 0px 0px;
+    margin: 0px;
+  } 
+  
+  .logo01{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+  }
+
+  .logo002{
+    width: 500px;
+    height: 300px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+    display: flex;
+    
+  }
+
+  /* para recapcha */
+  @media(max-width: 2500px){
+    .g-recaptcha iframe {
+      max-width: 100%;
+      transform:scale(0.77);
+      -webkit-transform:scale(0.77);
+      transform-origin: left center;
+      -webkit-transform-origin: left center;
+    }
+    #rc-imageselect {
+      transform:scale(0.77);
+      -webkit-transform:scale(0.77);
+      transform-origin:0 0;
+      -webkit-transform-origin:0 0;
+    }
+  }
+  
+  @media (max-width: 710px){
+
+    .body2 {
+      background-image: url("/static/images/fondo2.jpg");
+    }
+
+    h1 {
+      font-size: 40px;
+      word-break: break-all;
+    }
+    
+    
+  .column {
+    float: left;
+    width: 50%;
+    display: none; 
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  .cat-box {
+    float: left;
+    width: 50%;
+    display: none; 
+  } 
+  
+  
+  
+  .content {
+    background-color: white;
+    padding: 15px;
+    width: 90%;
+  }
+  
+  
+  /* The "show" class is added to the filtered elements */
+   
+  .show {
+    display: block;
+  }
+  
+  
+  /* Add a grey background color on mouse-over */
+   
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background color to the active button */
+   
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  
+  img {
+    height: 150px;
+  }
+
+  .logo01{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
+}
+
+  @media (max-width: 500px){
+
+    .container2  {
+      position: absolute;
+      vertical-align:middle;
+      margin-bottom: 80px;
+      margin-top: 80px;
+      max-width: 380px;
+      padding: 0px 20px 10px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,0.1); 
+    } 
+
+    .body2 {
+      background-image: url("/static/images/fondo3.jpg");
+    }
+
+    h1 {
+      font-size: 40px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 8px -16px;
+      margin-left: 25%;
+    }
+
+    /* Create three equal columns that floats next to each other */
+     
+  .column {
+    float: left;
+    width: 100%;
+    display: none; /* Hide columns by default */
+     
+  }
+  
+  /* Clear floats after rows */
+   
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .cat-box {
+    float: left;
+    width: 100%;
+    display: none; /* Hide columns by default */
+     
+  }
+  
+  /* Content */
+   
+  .content {
+    background-color: white;
+    padding: 15px;
+    width: 70%;
+
+  }
+  
+  /* The "show" class is added to the filtered elements */
+   
+  .show {
+    display: block;
+  }
+  
+  /* Add a grey background color on mouse-over */
+   
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Add a dark background color to the active button */
+   
+  .btn.active {
+    background-color: #666;
+    color: white;
+  } */
+  
+  img {
+    height: 200px;
+    width: 50%;
+  }
+
+} 
+
+  
+
+/* tabla*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color:#666;
+  padding: 10px;
+  text-align: center;
+  color:#f1f1f1
+  
+}
+
+.container-footer-all{
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.info1 {
+  
+  margin-left: 80px;
+}
+
+.info2{
+
+  margin-left: 80px;
+}
+
+.info3{
+ 
+  margin-left: 80px;
+}
+
+.imgUsuario01{
+
+  width: 100%;
+  height: 80%;
+
+}
+
+
+.txtUser01{
+  margin-left: 150px;
+}
+
+.error{
+  color: aliceblue;
+}
+
+.login{
+  color: aliceblue;
+}
+
+/*------------------------------ Home----------------------------------------------------*/
+.body3{
+  margin: 1%;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.slider{
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 800px;
+  height: 500px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.manual-btn{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #40D3DC;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #40D3DC;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #40D3DC;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #40D3DC;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #40D3DC;
+}
+
+.conteinerHome{
+ align-items: center;
+ font-style: italic;
+}
+
+/* ---------------------------Home body instrucciones------------------------ */
+
+
+.homebody01{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f1f1f1;
+}
+
+section{
+  padding: 10px 10px;
+}
+
+.title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-title{
+  position: relative;
+  color: #1a1a1d;
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+.section-title:before{
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  width: 140px;
+  height: 4px;
+  background: #3a6cf4;
+  transform: translateX(-50%);
+}
+
+.section-title:after{
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3a6cf4;
+  transform: translateX(-50%);
+}
+
+.about .content01 .col-right .content-title{
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+
+
+/*Estilo de los contenedores*/
+
+.services .content01{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.title p{
+  font-size: 1em;
+  width: 80%;
+}
+
+.services .content01 .card{
+  background: #fff;
+  width: 19%;
+  margin: 10px;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+}
+  
+.services .content01 .card .service-icon{
+  color: #4b619e;
+  font-size: 8em;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.services .content01 .card:hover .service-icon{
+  transform: translateY(-10px);
+}
+
+.services .content01 .card .info{
+  text-align: center;
+}

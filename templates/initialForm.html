@@ -1,0 +1,59 @@
+{% extends 'add_client.html' %}
+
+{% block body %}
+
+<h1>Formulario Inicial</h1>
+<p>En "Un doc para usted" velamos siempre por
+    su bienestar y buscamos la mejor manera para
+    servirle. A continuación, se presentará un formulario
+    el cual deberá ser llenado con sus datos personales con
+    el fin de ser registrado en nuestra clínica y de esta forma
+    atenderlo como usted merece.</p>
+
+<center>
+    <div></div>
+    <form action="{{ url_for('initialForm') }}" method="post">
+        <p>Fecha:
+            <input type="date" name="date" id="date">
+        </p>
+
+
+        <fieldset class="inline">
+            <legend>Detalles de Paciente:</legend>
+            <label>Dirección:<br />
+                <input type="text" name="address" id="address" /></label>
+        </fieldset>
+        <br>
+        <fieldset class="inline">
+            <legend>Referencias:</legend>
+            <label>Fecha de nacimiento:<br />
+                <input type="date" name="datebirth" id="datebirth" /></label><br />
+            <br>
+            <label for="sex">Sexo:</label>
+            <select name="sex" id="sex">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+            <br>
+            <br>
+            <label>Estado Civil:<br />
+                <input type="text" name="civil" id="civil" /></label><br />
+            <label>CP:<br />
+                <input type="text" name="cp" id="cp" /></label><br />
+            <label>Teléfono:<br />
+                <input type="number" name="tel" id="tel" /></label><br />
+            <label>Celular:<br />
+                <input type="number" name="cel" id="cel" /></label><br />
+        </fieldset>
+        <br>
+        <br>
+        <button onclick="initialForm()">Enviar formulario de registro</button>
+    </form>
+    </div>
+</center>
+
+<br>
+<div id="message"></div>
+
+<script src="{{url_for('static', filename='script.js')}}"></script>
+{% endblock body %}

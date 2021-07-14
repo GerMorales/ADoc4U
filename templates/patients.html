@@ -1,0 +1,32 @@
+{% extends 'add_adm.html' %}
+
+{% block body %}
+<h1>Información pacientes</h1>
+<table border="1">
+    <tr>
+        <th>Usuario</th>
+        <th>Fecha registro</th>
+        <th>Dirección</th>
+        <th>Fecha nacimiento</th>
+        <th>Sexo</th>
+        <th>Estado civil</th>
+        <th>Código postal</th>
+        <th>Teléfono</th>
+        <th>Celular</th>
+    </tr>
+
+    {% for infoPatient in infoPatients %}
+    <tr>
+        <td>{{ infoPatient["user_email"] }} </td>
+        <td>{{ infoPatient["date"] }} </td>
+        <td>{{ infoPatient["address"] }} </td>
+        <td>{{ infoPatient["birthdate"] }}</td>
+        <td>{{ infoPatient["sex"] }}</td>
+        <td>{{ infoPatient["status"] }}</td>
+        <td>{{ infoPatient["postal"] }}</td>
+        <td>{{ infoPatient["tel"] }}</td>
+        <td>{{ infoPatient["cel"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock body %}
