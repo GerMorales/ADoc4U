@@ -9,9 +9,9 @@ class PybaDatabase:
         self.password = "12345"
         self.database = "doctordb"
         self.connection = self.createConnection()
-        self.cursor = self.createCursor()"""
+        self.cursor = self.createCursor()
 
-        # Heroku
+        """
         self.host = "us-cdbr-east-04.cleardb.com"
         self.port = 3306
         self.user = "b7f7045b3ec582"
