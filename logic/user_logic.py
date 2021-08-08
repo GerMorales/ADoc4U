@@ -8,7 +8,7 @@ class UserLogic(PybaLogic):
     def insertUser(self, userName, userEmail, password, salt):
         database = self.createDatabaseObj()
         sql = (
-            "INSERT INTO `doctordb`.`user` "
+            "INSERT INTO `heroku_83c89d7d77e295e`.`user` "
             + "(`id`,`user_name`,`user_email`,`password`,`salt`) "
             + f"VALUES(0,'{userName}','{userEmail}','{password}','{salt}');"
         )
@@ -18,8 +18,8 @@ class UserLogic(PybaLogic):
     def getUserByEmail(self, userEmail):
         database = self.createDatabaseObj()
         sql = (
-            "SELECT id, user_name, user_email, password, salt "
-            + f"FROM doctordb.user where user_email like '{userEmail}';"
+            "SELECT id, heroku_83c89d7d77e295e, user_email, password, salt "
+            + f"FROM heroku_83c89d7d77e295e.user where user_email like '{userEmail}';"
         )
         result = database.executeQuery(sql)
         if len(result) > 0:
@@ -29,7 +29,7 @@ class UserLogic(PybaLogic):
 
     def getUserById(self, userId):
         database = self.createDatabaseObj()
-        sql = f"SELECT user_name FROM doctordb.user where id like '{userId}';"
+        sql = f"SELECT user_name FROM heroku_83c89d7d77e295e.user where id like '{userId}';"
         result = database.executeQuery(sql)
         if len(result) > 0:
             return result[0]
@@ -38,7 +38,7 @@ class UserLogic(PybaLogic):
 
     def getRecetaByUser(self, userId, estado):
         database = self.createDatabaseObj()
-        sql = f"SELECT * FROM doctordb.ventamedicina where id_user like '{userId}' and estadoVenta like '{estado}';"
+        sql = f"SELECT * FROM heroku_83c89d7d77e295e.ventamedicina where id_user like '{userId}' and estadoVenta like '{estado}';"
         result = database.executeQuery(sql)
         if len(result) > 0:
             return result
@@ -47,7 +47,7 @@ class UserLogic(PybaLogic):
 
     def getRecetaCuenta(self, userId, estado):
         database = self.createDatabaseObj()
-        sql = f"SELECT sum(Precio) as Total FROM doctordb.ventamedicina  where id_user like '{userId}' and estadoVenta like '{estado}' group by id_user;"
+        sql = f"SELECT sum(Precio) as Total FROM heroku_83c89d7d77e295e.ventamedicina  where id_user like '{userId}' and estadoVenta like '{estado}' group by id_user;"
         result = database.executeQuery(sql)
         if len(result) > 0:
             return result[0]
@@ -56,12 +56,12 @@ class UserLogic(PybaLogic):
 
     def updateRecetaCuenta(self, userId, estado, newEstado):
         database = self.createDatabaseObj()
-        sql = f"UPDATE `doctordb`.`ventamedicina` SET `estadoVenta` = '{newEstado}' WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
+        sql = f"UPDATE `heroku_83c89d7d77e295e`.`ventamedicina` SET `estadoVenta` = '{newEstado}' WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
         rows = database.executeNonQueryRows(sql)
         return rows
 
     def deleteRecetaCuenta(self, userId, estado):
         database = self.createDatabaseObj()
-        sql = f"DELETE FROM `doctordb`.`ventamedicina` WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
+        sql = f"DELETE FROM `heroku_83c89d7d77e295e`.`ventamedicina` WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
         rows = database.executeNonQueryRows(sql)
         return rows

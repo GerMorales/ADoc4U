@@ -10,7 +10,7 @@ class FormLogic(PybaLogic):
     ):
         database = self.createDatabaseObj()
         sql = (
-            "INSERT INTO `doctordb`.`forms` "
+            "INSERT INTO `heroku_83c89d7d77e295e`.`forms` "
             + "(`id`,`user_email`,`date`,`address`,`birthdate`,`sex`,`status`,`postal`,`tel`,`cel`) "
             + f"VALUES(0,'{userEmail}','{date}','{address}','{birthdate}','{sex}','{status}','{postal}', '{tel}', '{cel}');"
         )
@@ -21,7 +21,7 @@ class FormLogic(PybaLogic):
         database = self.createDatabaseObj()
         sql = (
             "SELECT user_email, date, address, birthdate, sex, status, postal, tel, cel "
-            + f"FROM doctordb.forms where user_email like '{userEmail}';"
+            + f"FROM heroku_83c89d7d77e295e.forms where user_email like '{userEmail}';"
         )
         result = database.executeQuery(sql)
         if len(result) > 0:
@@ -31,7 +31,7 @@ class FormLogic(PybaLogic):
 
     def getAllForms(self):
         database = self.createDatabaseObj()
-        sql = "SELECT * " + f"FROM doctordb.forms;"
+        sql = "SELECT * " + f"FROM heroku_83c89d7d77e295e.forms;"
         result = database.executeQuery(sql)
         if len(result) > 0:
             return result

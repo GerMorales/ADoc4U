@@ -8,7 +8,7 @@ class AppointmentLogic(PybaLogic):
     def insertAppointment(self, userEmail, date, time, specialty, doctor, reason):
         database = self.createDatabaseObj()
         sql = (
-            "INSERT INTO `doctordb`.`appointment` "
+            "INSERT INTO `heroku_83c89d7d77e295e`.`appointment` "
             + "(`id`,`user_email`,`date`,`time`,`specialty`,`doctor`,`reason`) "
             + f"VALUES(0,'{userEmail}','{date}','{time}','{specialty}','{doctor}','{reason}');"
         )
@@ -19,7 +19,7 @@ class AppointmentLogic(PybaLogic):
         database = self.createDatabaseObj()
         sql = (
             "SELECT * "
-            + f"FROM doctordb.appointment where user_email like '{userEmail}';"
+            + f"FROM heroku_83c89d7d77e295e.appointment where user_email like '{userEmail}';"
         )
         result = database.executeQuery(sql)
         if len(result) > 0:
@@ -29,7 +29,7 @@ class AppointmentLogic(PybaLogic):
 
     def getAllApointments(self):
         database = self.createDatabaseObj()
-        sql = "SELECT * " + f"FROM doctordb.appointment;"
+        sql = "SELECT * " + f"FROM heroku_83c89d7d77e295e.appointment;"
         result = database.executeQuery(sql)
         if len(result) > 0:
             return result
