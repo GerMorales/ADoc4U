@@ -8,7 +8,7 @@ class AdminLogic(PybaLogic):
     def insertAdmin(self, adminName, adminEmail, password, salt):
         database = self.createDatabaseObj()
         sql = (
-            "INSERT INTO `doctorbd`.`admin` "
+            "INSERT INTO `doctordb`.`admin` "
             + "(`id`,`admin_email`,`password`,`salt`) "
             + f"VALUES(0,'{adminName}','{adminEmail}','{password}','{salt}');"
         )
@@ -26,3 +26,13 @@ class AdminLogic(PybaLogic):
             return result[0]
         else:
             return []
+
+    def insertVenta(self, emailDr, idUser, idMedicina, nombreMed, precio, estado):
+        database = self.createDatabaseObj()
+        sql = (
+            "INSERT INTO `doctordb`.`ventamedicina` "
+            + "(`id`, `email_dr`, `id_user`,`id_medicina`,`nombreMed`,`Precio`,`estadoVenta`) "
+            + f"VALUES(0,'{emailDr}','{idUser}','{idMedicina}','{nombreMed}','{precio}','{estado}');"
+        )
+        rows = database.executeNonQueryRows(sql)
+        return rows

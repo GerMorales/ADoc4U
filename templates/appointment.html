@@ -69,6 +69,14 @@
             <td>{{ appointment["reason"] }}</td>
         </tr>
         {% endfor %}
-    </table>
+    </table><br>
+
+    <h2>Otros hospitales asociados que puedes acudir en caso de emergencia:</h2>
+
+    <ol type=”A”>
+        {% for hospital in hospitales %}
+        <li>{{ hospital["nombrehospital"] }}</li><br>
+        {% endfor %}
+    </ol>
 </body>
 {% endblock body %}

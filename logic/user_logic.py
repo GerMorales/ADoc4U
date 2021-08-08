@@ -18,7 +18,7 @@ class UserLogic(PybaLogic):
     def getUserByEmail(self, userEmail):
         database = self.createDatabaseObj()
         sql = (
-            "SELECT user_name, user_email, password, salt "
+            "SELECT id, user_name, user_email, password, salt "
             + f"FROM doctordb.user where user_email like '{userEmail}';"
         )
         result = database.executeQuery(sql)
@@ -26,3 +26,42 @@ class UserLogic(PybaLogic):
             return result[0]
         else:
             return []
+
+    def getUserById(self, userId):
+        database = self.createDatabaseObj()
+        sql = f"SELECT user_name FROM doctordb.user where id like '{userId}';"
+        result = database.executeQuery(sql)
+        if len(result) > 0:
+            return result[0]
+        else:
+            return []
+
+    def getRecetaByUser(self, userId, estado):
+        database = self.createDatabaseObj()
+        sql = f"SELECT * FROM doctordb.ventamedicina where id_user like '{userId}' and estadoVenta like '{estado}';"
+        result = database.executeQuery(sql)
+        if len(result) > 0:
+            return result
+        else:
+            return []
+
+    def getRecetaCuenta(self, userId, estado):
+        database = self.createDatabaseObj()
+        sql = f"SELECT sum(Precio) as Total FROM doctordb.ventamedicina  where id_user like '{userId}' and estadoVenta like '{estado}' group by id_user;"
+        result = database.executeQuery(sql)
+        if len(result) > 0:
+            return result[0]
+        else:
+            return []
+
+    def updateRecetaCuenta(self, userId, estado, newEstado):
+        database = self.createDatabaseObj()
+        sql = f"UPDATE `doctordb`.`ventamedicina` SET `estadoVenta` = '{newEstado}' WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
+        rows = database.executeNonQueryRows(sql)
+        return rows
+
+    def deleteRecetaCuenta(self, userId, estado):
+        database = self.createDatabaseObj()
+        sql = f"DELETE FROM `doctordb`.`ventamedicina` WHERE `id_user` = '{userId}' and `estadoVenta` = '{estado}';"
+        rows = database.executeNonQueryRows(sql)
+        return rows

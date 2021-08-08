@@ -61,12 +61,14 @@
     <li><a href="{{ url_for('add_adm') }}">Inicio</a></li>
     <li><a href="{{ url_for('patients') }}">Pacientes</a></li>
     <li><a href="{{ url_for('appointments') }}">Citas agendadas</a></li>
-    <li class="derecha"><a href="{{ url_for('logout') }}">Cerrar sesion</a></li>
+    <li><a href="{{ url_for('receta_adm') }}">Programar Receta</a></li>
+    <li><a href="{{ url_for('prov') }}">Empresas proveedoras</a></li>
+    <li class="derecha"><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
   </ul>
   <div class="conteinerHome" align="center">
     <img class="logo002" src="static/images/logo002.gif">
 
-    <p>Bienvenid@, {{ name }}</p>
+    <p>Bienvenid@, {{ email }}</p>
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     {% for category,message in messages %}

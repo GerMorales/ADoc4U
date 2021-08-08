@@ -1,0 +1,21 @@
+{% extends 'add_adm.html' %}
+
+{% block body %}
+<h1>Programar Receta Médica</h1>
+
+<form action="{{ url_for('receta_adm') }}" method="post" style="margin-left: 10px; display:block; width:40%;float:left">
+
+    <br>
+    <label for="id_cita">Id_Paciente</label>
+    <input type="text" name="id_cita" id="id_cita">
+    <br>
+
+    <p>Seleccionar medicinas (máximo 4):</p>
+    {% for medicina in infoMedicina %}
+    <input type="checkbox" id="{{ medicina['idmedicinas']}}" name="medicinas" value="{{ medicina['idmedicinas']}}">
+    <label for="{{ medicina['idmedicinas']}}">{{ medicina["nombremed"] }}</label><br>
+    {% endfor %}<br>
+
+    <input type="submit" value="Enviar">
+</form>
+{% endblock body %}

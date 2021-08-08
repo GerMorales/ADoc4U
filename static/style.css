@@ -399,7 +399,8 @@
 /* tabla*/
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 96%;
+  margin-left: 2%;
 }
 
 th, td {

@@ -1,0 +1,57 @@
+{% extends 'add_client.html' %}
+
+{% block body %}
+<h1>Recetas</h1>
+
+<body>
+
+    <h2>Receta nueva</h2>
+    <table border="1" style="width: 65%;">
+        <tr>
+            <th>Medicina</th>
+            <th>Precio</th>
+
+        </tr>
+
+        {% for receta in recetas %}
+        <tr>
+            <td>{{ receta["nombreMed"] }} </td>
+            <td>{{ receta["Precio"] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Cuenta:</td>
+            <td>{{ cuenta }}</td>
+        </tr>
+    </table>
+    <br>
+    <form action="{{ url_for('receta_client') }}" method="post" style="margin-left: 3px;">
+        <label for="confirmacion">Confirmación:</label>
+        <select name="confirmacion" id="confirmacion">
+            <option value="si">SI</option>
+            <option value="no">NO</option>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <h2>Medicinas a pagar</h2>
+    <table border="1" style="width: 65%;">
+        <tr>
+            <th>Medicina</th>
+            <th>Precio</th>
+
+        </tr>
+        {% for receta in recetasPagar %}
+        <tr>
+            <td>{{ receta["nombreMed"] }} </td>
+            <td>{{ receta["Precio"] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Cuenta:</td>
+            <td>{{ cuentaPgar }}</td>
+        </tr>
+    </table>
+    <br>
+</body>
+{% endblock body %}

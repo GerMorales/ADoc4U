@@ -251,7 +251,7 @@ function loadAddDataFromAllUsers() {
     }
 
 }
-function loadRegisteredUsers(){
+function loadRegisteredUsers() {
     var userArray
     var registeredAdmins = 0
     var registeredClients
@@ -268,9 +268,9 @@ function loadRegisteredUsers(){
     }
 
     registeredClients = registeredUsers - registeredAdmins
-    document.getElementById("users").innerHTML = "Hay "+registeredUsers+" usuarios registrados"
-    document.getElementById("admins").innerHTML = "Hay "+registeredAdmins+" administradores registrados"
-    document.getElementById("clients").innerHTML = "Hay "+registeredClients+" clientes registrados"
+    document.getElementById("users").innerHTML = "Hay " + registeredUsers + " usuarios registrados"
+    document.getElementById("admins").innerHTML = "Hay " + registeredAdmins + " administradores registrados"
+    document.getElementById("clients").innerHTML = "Hay " + registeredClients + " clientes registrados"
 }
 
 
@@ -324,7 +324,7 @@ function modifyOffAnswerByIndex(pIndex, pSave) {
     var parent = getElementParent(element, 2)
     var children = parent.children
 
-    if(pSave===0){
+    if (pSave === 0) {
         //modify off
         children[1].innerHTML = initialFormArray[pIndex].date
         children[2].innerHTML = initialFormArray[pIndex].name
@@ -341,16 +341,16 @@ function modifyOffAnswerByIndex(pIndex, pSave) {
 
     } else {
         //save
-        var input1 = document.getElementById("inpDate1"+pIndex).value
-        var input2 = document.getElementById("inpName"+pIndex).value
-        var input3 = document.getElementById("inpDir"+pIndex).value
-        var input4 = document.getElementById("inpDB"+pIndex).value
-        var input5 = document.getElementById("inpSex"+pIndex).value
-        var input6 = document.getElementById("inpCivil"+pIndex).value
-        var input7 = document.getElementById("inpCP"+pIndex).value
-        var input8 = document.getElementById("inpTel"+pIndex).value
-        var input9 = document.getElementById("inpCel"+pIndex).value
-        var input10 = document.getElementById("inpMail"+pIndex).value
+        var input1 = document.getElementById("inpDate1" + pIndex).value
+        var input2 = document.getElementById("inpName" + pIndex).value
+        var input3 = document.getElementById("inpDir" + pIndex).value
+        var input4 = document.getElementById("inpDB" + pIndex).value
+        var input5 = document.getElementById("inpSex" + pIndex).value
+        var input6 = document.getElementById("inpCivil" + pIndex).value
+        var input7 = document.getElementById("inpCP" + pIndex).value
+        var input8 = document.getElementById("inpTel" + pIndex).value
+        var input9 = document.getElementById("inpCel" + pIndex).value
+        var input10 = document.getElementById("inpMail" + pIndex).value
 
         initialFormArray[pIndex].date = input1
         initialFormArray[pIndex].name = input2
@@ -443,10 +443,10 @@ function add() {
     var especialidad = document.getElementById("especialidad").value
     var reason = document.getElementById("reason").value
 
-    
+
     addResultToTable(date1, hour, doctors, especialidad, reason)
     addResultToStorage(date1, hour, doctors, especialidad, reason)
-    document.getElementById("messageC").innerHTML= "Su cita fue programada satisfactoriamente. Si por algún motivo no puede asistir, por favor agéndela nuevamente."
+    document.getElementById("messageC").innerHTML = "Su cita fue programada satisfactoriamente. Si por algún motivo no puede asistir, por favor agéndela nuevamente."
     cleanForm()
 
 }
@@ -464,15 +464,15 @@ function cleanForm() {
 
 function addResultToTable(pDate, pHour, pDoctors, pEspecialidad, pReason) {
     var table = document.getElementById("userTableClient");
-    
+
     var row = table.insertRow(1)
-        
+
     row.insertCell(0).innerHTML = pDate;
     row.insertCell(1).innerHTML = pHour
     row.insertCell(2).innerHTML = pDoctors;
     row.insertCell(3).innerHTML = pEspecialidad;
     row.insertCell(4).innerHTML = pReason;
-    
+
 }
 
 
@@ -600,12 +600,12 @@ function initialForm() {
     var cel = document.getElementById("cel").value
     var mail = document.getElementById("mail").value
     // 
-    document.getElementById("message").innerHTML= "Sus datos fueron guardados correctamente. Si necesita actualizar su información, por favor llene el formulario nuevamente o contacte al administrador."
-    
+    document.getElementById("message").innerHTML = "Sus datos fueron guardados correctamente. Si necesita actualizar su información, por favor llene el formulario nuevamente o contacte al administrador."
+
     cleanFormInitial()
     addFormToStorage(date, name, address, datebirth, sex, civil, cp, tel, cel, mail)
 
-    
+
 }
 //
 function cleanFormInitial() {
@@ -621,7 +621,7 @@ function cleanFormInitial() {
     var cel = document.getElementById("cel").value = ""
     var mail = document.getElementById("mail").value = ""
 
-}    
+}
 
 function addFormToStorage(pDate, pName, pAddress, pDateBirth, pSex, pCivil, pCp, pTel, pCel, pMail) {
     var initialFormArray = [];
@@ -634,7 +634,7 @@ function addFormToStorage(pDate, pName, pAddress, pDateBirth, pSex, pCivil, pCp,
         initialFormArray = JSON.parse(localStorage.getItem("lInitialFormArray"));
     }
 
-    var current_form= {
+    var current_form = {
         user: currentLoggedUser.user,
         date: pDate,
         name: pName,
@@ -656,3 +656,9 @@ function addFormToStorage(pDate, pName, pAddress, pDateBirth, pSex, pCivil, pCp,
 /*
 ************* dashboard functionality add client
 */
+
+/*
+************* admin add medicina
+*/
+
+

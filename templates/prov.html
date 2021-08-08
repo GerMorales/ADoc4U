@@ -1,0 +1,22 @@
+{% extends 'add_adm.html' %}
+
+{% block body %}
+
+<h1>Empresas proveedoras</h1>
+<table border="1" style="width: 90%;">
+    <tr>
+        <th>Empresa</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+
+    </tr>
+    {% for empresa in empresas %}
+    <tr>
+        <td>{{ empresa["nombreempre"] }} </td>
+        <td>{{ empresa["telefonoempre"] }}</td>
+        <td>{{ empresa["direccionempre"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+{% endblock body %}

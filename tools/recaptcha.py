@@ -4,7 +4,7 @@ import requests
 
 class RecaptchaHelper:
     def __init__(self, request):
-        self.secret = "6Lcs1RobAAAAAPSZaOpIsjO0D0BwJq2YuFdefqm-"
+        self.secret = "6LeB7W4bAAAAANG1rCRSgw_MtFyexVoI6zERBQlc-"
         self.request = request
 
     def validateRecaptcha(self):
