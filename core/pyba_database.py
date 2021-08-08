@@ -6,7 +6,7 @@ class PybaDatabase:
         """self.host = "localhost"
         self.port = 3306
         self.user = "root"
-        self.password = "root"
+        self.password = "12345"
         self.database = "doctordb"
         self.connection = self.createConnection()
         self.cursor = self.createCursor()"""
