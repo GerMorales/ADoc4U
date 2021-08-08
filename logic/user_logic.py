@@ -18,7 +18,7 @@ class UserLogic(PybaLogic):
     def getUserByEmail(self, userEmail):
         database = self.createDatabaseObj()
         sql = (
-            "SELECT id, heroku_83c89d7d77e295e, user_email, password, salt "
+            "SELECT id, user_name, user_email, password, salt "
             + f"FROM heroku_83c89d7d77e295e.user where user_email like '{userEmail}';"
         )
         result = database.executeQuery(sql)
